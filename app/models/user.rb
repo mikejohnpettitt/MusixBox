@@ -7,3 +7,7 @@ class User < ApplicationRecord
   has_many :user_sessions
   validates :pseudo, presence: true, uniqueness: true
 end
+
+
+
+
