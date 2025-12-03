@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_03_112822) do
     t.string "user_answer_artist"
     t.bigint "session_id", null: false
     t.bigint "song_id", null: false
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_questions_on_group_id"
