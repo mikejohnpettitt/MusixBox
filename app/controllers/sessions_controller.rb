@@ -2,8 +2,10 @@ class SessionsController < ApplicationController
 
   def new
     # this is the playlist select page
-    @session = Session.new 
+    @playlists = Playlist.all
   end
+
+
 
   def create
     @session = Session.new(session_params)
@@ -25,6 +27,7 @@ class SessionsController < ApplicationController
     end
   end
 
+ 
   private
 
   def session_params
