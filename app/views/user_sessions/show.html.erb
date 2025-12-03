@@ -1,4 +1,13 @@
 <h1>Gameplay</h1>
 User id: <%= @user_session.user_id %>
 Session id: <%= @user_session.session_id %>
-Group id: <%= @user_session.group_id %>
+
+Playlist id: <%= Session.find(@user_session.session_id).playlist.title %>
+<%= @playlist = Session.find(@user_session.session_id).playlist %>
+
+<%= Question.create(session_id: @user_session.session_id, song: Song.where(playlist: @playlist).first) %>
+<%= raise %>
+
+<% Question.all.each do |question| %>
+    <%= question.song %>
+<% end %>
