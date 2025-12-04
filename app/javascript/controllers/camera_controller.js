@@ -204,6 +204,40 @@ export default class extends Controller {
   }
 
   // ============================================
+  // MÉTHODE 4 : TÉLÉCHARGER LA PHOTO
+  // ============================================
+  // Cette méthode est appelée quand on clique sur "Save to phone"
+  downloadPhoto(event) {
+    event.preventDefault()
+    
+    // On vérifie qu'on a bien une photo à télécharger
+    if (!this.photoData) {
+      alert("Pas de photo à télécharger")
+      return
+    }
+    
+    // On crée un élément <a> (lien) invisible
+    // C'est un "trick" pour forcer le téléchargement
+    const link = document.createElement("a")
+    
+    // On met la photo comme lien (en base64)
+    link.href = this.photoData
+    
+    // On donne un nom au fichier téléchargé
+    // "photo_" + timestamp = ex: "photo_1701604800000.jpg"
+    link.download = `photo_${Date.now()}.jpg`
+    
+    // On ajoute le lien au body (nécessaire pour que le click fonctionne)
+    document.body.appendChild(link)
+    
+    // On simule un click sur le lien (ça lance le téléchargement)
+    link.click()
+    
+    // On supprime le lien du body (nettoyage)
+    document.body.removeChild(link)
+  }
+
+  // ============================================
   // MÉTHODE 5 : PARTAGER SUR INSTAGRAM
   // ============================================
   // Cette méthode est appelée quand on clique sur "Share"
