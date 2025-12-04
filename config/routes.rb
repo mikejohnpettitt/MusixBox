@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'camera/show'
   get 'questions/show'
   devise_for :users
   root to: "pages#home"
+  get 'camera/show'
 
   resources :playlists, only:[:index]
   resources :questions, only:[:create, :show, :edit, :update]
