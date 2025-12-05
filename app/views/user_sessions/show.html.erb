@@ -41,6 +41,9 @@ Question: <%#= @current_question.id %>-->
       <turbo-frame id="feedback_content">
         <!-- 4) Render du feedback -->
       </turbo-frame>
+      <div class="d-none d-flex justify-content-center align-items-center" data-toggle-target="welldone">
+         <%= image_tag "thumbsup.png" , style: "width: 300px;" %>
+      </div>
     </div>
   </div>
 </div>

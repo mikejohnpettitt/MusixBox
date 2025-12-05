@@ -26,6 +26,7 @@ export default class extends Controller {
         // Correct! Hide form, show feedback
         this.formTarget.classList.add("d-none")
         feedback.classList.remove("d-none")
+        this.welldoneTarget.classList.remove("d-none")
       } else {
         // Wrong! Hide form, show buzzer, play video
         this.formTarget.classList.add("d-none")
