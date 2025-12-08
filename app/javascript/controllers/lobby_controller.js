@@ -30,13 +30,19 @@ export default class extends Controller {
 
   received(data) {
     console.log("Received:", data)
+    console.log("HTML content:", data.html)
+    console.log("Players element:", document.getElementById('players'))
 
     if (data.type === "user_joined") {
-      console.log(`${data.user_id} joined the lobby`)
+      document.getElementById('players').insertAdjacentHTML('beforeend', data.html)
     }
 
     if (data.type === "user_left") {
-      console.log(`${data.user_id} left the lobby`)
+      // console.log(`${data.user_id} left the lobby`)
+      const playerElement = document.getElementById(`player_${data.user_id}`)
+      if (playerElement) {
+        playerElement.remove()
+      }
     }
   }
 }
