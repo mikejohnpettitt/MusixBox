@@ -3,9 +3,36 @@ User id: <%#= @user_session.user_id %><br>
 Session id: <%#= @user_session.session_id %><br>
 Playlist: <%#= Session.find(@user_session.session_id).playlist.title %>
 Question: <%#= @current_question.id %>-->
+
+
 <div class="container-100 d-flex flex-column justify-content-between position-relative">
   <div class="doudou" data-controller="youtube toggle">
     <div class="container-30">
+      <%# ==================== BARRE DE PROGRESSION STYLE INSTAGRAM ==================== %>
+      <% questions = Question.where(session_id: @user_session.session_id) %>
+<% total_questions = questions.count %>
+<% current_index = questions.find_index { |q| q.id == @current_question.id }.to_i + 1 %>
+
+<%# Conteneur flex avec petits espaces entre chaque segment %>
+<div class="d-flex gap-1 px-3 py-2">
+  <% (1..total_questions).each do |i| %>
+    <div class="progress flex-grow-1" style="height: 4px;">
+      <% if i <= current_index %>
+        <%# Musique passée ou en cours = barre pleine %>
+        <div class="progress-bar bg-warning" style="width: 100%;"></div>
+      <% else %>
+        <%# Musique pas encore jouée = vide %>
+        <div class="progress-bar bg-secondary opacity-25" style="width: 100%;"></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%# Indicateur texte "3/10" %>
+<div class="text-center text-white-50 small mb-2">
+  <span><%= current_index %> / <%= total_questions %></span>
+</div>
+<%# ==================== FIN BARRE DE PROGRESSION ==================== %>
       <%= turbo_frame_tag "question" do %>
         <div>
           <%= render "questions/video" , question: @current_question %>
@@ -30,9 +57,9 @@ Question: <%#= @current_question.id %>-->
           <%= simple_form_for @current_question, data: {
                           action: "submit->counter#saveTime turbo:submit-end->toggle#submitted" ,
                           turbo_frame: "feedback_content" } do |f| %>
-            <%= f.hidden_field :time_taken, data: { counter_target: "input" }%>
-            <%= f.input :user_answer_artist, placeholder: "Artist", label_html: { class: "sr-only" }%>
-            <%= f.input :user_answer_title, placeholder: "Title", label_html: { class: "sr-only" }%>
+            <%= f.hidden_field :time_taken, data: { counter_target: "input" } %>
+            <%= f.input :user_answer_artist, placeholder: "Artist", label_html: { class: "sr-only" } %>
+            <%= f.input :user_answer_title, placeholder: "Title", label_html: { class: "sr-only" } %>
             <%= f.submit "Go!" %>
           <% end %>
         </div>
@@ -42,7 +69,7 @@ Question: <%#= @current_question.id %>-->
         <!-- 4) Render du feedback -->
       </turbo-frame>
       <div class="d-none d-flex justify-content-center align-items-center" data-toggle-target="welldone">
-         <%= image_tag "thumbsup.png" , style: "width: 300px;" %>
+         <%= image_tag "thumbsup.png" , style:"width: 300px;" %>
       </div>
     </div>
   </div>
