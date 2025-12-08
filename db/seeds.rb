@@ -151,23 +151,23 @@ puts "success"
   {playlist: playlist_funk, title: "Super Freak", artist: "Rick James",                               youtube_url: "https://www.youtube.com/embed/QYHxGBH6o4M?si=ADieEYlg6-UJp_6-"},
   {playlist: playlist_funk, title: "Give Up The Funk", artist: "Parliament",                          youtube_url: "https://www.youtube.com/embed/gBWH3OWfT2Y?si=T51v2T85T64mVby6"},
   {playlist: playlist_funk, title: "Brick House", artist: "Commodores",                               youtube_url: "https://www.youtube.com/embed/rrBx6mAWYPU?si=9tgk8sTNcYv6BDof"},
-  {playlist: playlist_funk, title: "Play That Funky Music", artist: "Wild Cherry",                    youtube_url: "https://www.youtube.com/embed/hcuM0ZRRmEM"},
+  {playlist: playlist_funk, title: "Play That Funky Music", artist: "Wild Cherry",                    youtube_url: "https://www.youtube.com/embed/QYHxGBH6o4M?si=jyw1VXUC36LHzGJ4"},
   {playlist: playlist_funk, title: "Get Up (I Feel Like Being a) Sex Machine", artist: "James Brown", youtube_url: "https://www.youtube.com/embed/sjzZh6-h9fM?si=t4OBYPmpIR11SdZ7"},
-  {playlist: playlist_funk, title: "Flash Light", artist: "Parliament",                               youtube_url: "https://www.youtube.com/embed/7ZgOo__4eC8"},
-  {playlist: playlist_funk, title: "Jungle Boogie", artist: "Kool & The Gang",                        youtube_url: "https://www.youtube.com/embed/p1SLTRKSiyg"},
-  {playlist: playlist_funk, title: "Fire", artist: "Ohio Players",                                    youtube_url: "https://www.youtube.com/embed/hCuloYf-HHE"},
-  {playlist: playlist_funk, title: "Love Rollercoaster", artist: "Ohio Players",                      youtube_url: "https://www.youtube.com/embed/G1eF0wICJ6k"},
-  {playlist: playlist_funk, title: "Tell Me Something Good", artist: "Rufus & Chaka Khan",            youtube_url: "https://www.youtube.com/embed/caBQhM1Pgzw"}
+  {playlist: playlist_funk, title: "Flash Light", artist: "Parliament",                               youtube_url: "https://www.youtube.com/embed/bWurqD68u70?si=qzDMjalFtlZHMxNw"},
+  {playlist: playlist_funk, title: "Jungle Boogie", artist: "Kool & The Gang",                        youtube_url: "https://www.youtube.com/embed/QGKiC2suCHQ?si=LrAiQiqP3TWEwXgE"},
+  {playlist: playlist_funk, title: "Fire", artist: "Ohio Players",                                    youtube_url: "https://www.youtube.com/embed/zqsYNc_M988?si=szVC88ZLv_J1QAev"},
+  {playlist: playlist_funk, title: "Love Rollercoaster", artist: "Ohio Players",                      youtube_url: "https://www.youtube.com/embed/JLzblwij078?si=CG9Ys9teAmKPA3fH"},
+  {playlist: playlist_funk, title: "Get Down Saturday Night", artist: "Oliver Cheatham",              youtube_url: "https://www.youtube.com/embed/uUqcBwQjj4k?si=-sEdNrgduIL8gVHn"}
 ]
 
 [
-  {playlist: playlist_disco, title: "Stayin' Alive", artist: "Bee Gees",                        youtube_url: "https://www.youtube.com/embed/I_izvAbhExY"},
-  {playlist: playlist_disco, title: "Le Freak", artist: "Chic",                                 youtube_url: "https://www.youtube.com/embed/aQF9Gr4dQY0"},
-  {playlist: playlist_disco, title: "I Will Survive", artist: "Gloria Gaynor",                  youtube_url: "https://www.youtube.com/embed/ARt9HVvKJHw"},
-  {playlist: playlist_disco, title: "Dancing Queen", artist: "ABBA",                            youtube_url: "https://www.youtube.com/embed/xFrGuyw1V8s"},
-  {playlist: playlist_disco, title: "Don't Leave Me This Way", artist: "Thelma Houston",        youtube_url: "https://www.youtube.com/embed/8sAbzZjXLy8?si=zKcOCO-SgHldhxP-"},
-  {playlist: playlist_disco, title: "YMCA", artist: "Village People",                           youtube_url: "https://www.youtube.com/embed/CS9OO0S5w2k"},
-  {playlist: playlist_disco, title: "Boogie Wonderland", artist: "Earth, Wind & Fire",          youtube_url: "https://www.youtube.com/embed/god7hAPv8f0"},
+  {playlist: playlist_disco, title: "Stayin' Alive", artist: "Bee Gees",                        youtube_url: "https://www.youtube.com/embed/fNFzfwLM72c?si=jq5KcQ9iJzvu1QLz"},
+  {playlist: playlist_disco, title: "Le Freak", artist: "Chic",                                 youtube_url: "https://www.youtube.com/embed/aXgSHL7efKg?si=mBzV953pzhyjZFGz"},
+  {playlist: playlist_disco, title: "I Will Survive", artist: "Gloria Gaynor",                  youtube_url: "https://www.youtube.com/embed/6dYWe1c3OyU?si=W1dOXvGtyEWE8JY1"},
+  {playlist: playlist_disco, title: "Dancing Queen", artist: "ABBA",                            youtube_url: "https://www.youtube.com/embed/xFrGuyw1V8s?si=wk2GtlbqxZj-e5HP"},
+  {playlist: playlist_disco, title: "Don't Leave Me This Way", artist: "Thelma Houston",        youtube_url: "https://www.youtube.com/embed/8sAbzZjXLy8?si=TsWt2GM_B8-mdQ5w"},
+  {playlist: playlist_disco, title: "Ma Baker", artist: "Boney M",                              youtube_url: "https://www.youtube.com/embed/9c5yPIQ3LQI?si=YK8SPIz3sgFI5uRX"},
+  {playlist: playlist_disco, title: "Boogie Wonderland", artist: "Earth, Wind & Fire",          youtube_url: "https://www.youtube.com/embed/god7hAPv8f0?si=c30Gb5klTttNE5OY"},
   {playlist: playlist_disco, title: "He's the Greatest Dancer", artist: "Sister Sledge",        youtube_url: "https://www.youtube.com/embed/fLLSwHaYk6k?si=ThdtmaQuTslHzUDu"},
   {playlist: playlist_disco, title: "Hot Stuff", artist: "Donna Summer",                        youtube_url: "https://www.youtube.com/embed/KhcaPNuaJNU?si=ZEP8mgeYgbvsPkH7"},
   {playlist: playlist_disco, title: "Funky Town", artist: "Lipps Inc.",                         youtube_url: "https://www.youtube.com/embed/uhzy7JaU2Zc?si=eHukqeeIzaHLUc_Q"}
@@ -175,16 +175,16 @@ puts "success"
 # FOR POP
 Song.create!(
   [
-    {playlist: playlist_pop, title: "Blinding Lights", artist: "The Weeknd",                    youtube_url: "https://www.youtube.com/embed/4NRXx6U8ABQ"},
-    {playlist: playlist_pop, title: "Levitating", artist: "Dua Lipa",                           youtube_url: "https://www.youtube.com/embed/TUVcZfQe-Kw"},
-    {playlist: playlist_pop, title: "Bad Guy", artist: "Billie Eilish",                         youtube_url: "https://www.youtube.com/embed/DyDfgMOUjCI"},
-    {playlist: playlist_pop, title: "As It Was", artist: "Harry Styles",                        youtube_url: "https://www.youtube.com/embed/H5v3kku4y6Q"},
-    {playlist: playlist_pop, title: "Don’t Start Now", artist: "Dua Lipa",                      youtube_url: "https://www.youtube.com/embed/oygrmJFKYZY"},
-    {playlist: playlist_pop, title: "Shake It Off", artist: "Taylor Swift",                     youtube_url: "https://www.youtube.com/embed/nfWlot6h_JM"},
-    {playlist: playlist_pop, title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars",        youtube_url: "https://www.youtube.com/embed/OPf0YbXqDm0"},
-    {playlist: playlist_pop, title: "Havana", artist: "Camila Cabello",                         youtube_url: "https://www.youtube.com/embed/HCjNJDNzw8Y"},
-    {playlist: playlist_pop, title: "Hello", artist: "Adele",                                   youtube_url: "https://www.youtube.com/embed/YQHsXMglC9A"},
-    {playlist: playlist_pop, title: "Royals", artist: "Lorde",                                  youtube_url: "https://www.youtube.com/embed/LFasFq4GJYM"}
+    {playlist: playlist_pop, title: "Blinding Lights", artist: "The Weeknd",                    youtube_url: "https://www.youtube.com/embed/4NRXx6U8ABQ?si=fbsHNfeOrMla0TXq"},
+    {playlist: playlist_pop, title: "Levitating", artist: "Dua Lipa",                           youtube_url: "https://www.youtube.com/embed/TUVcZfQe-Kw?si=oLX6tZJWDyeYDazb"},
+    {playlist: playlist_pop, title: "Bad Guy", artist: "Billie Eilish",                         youtube_url: "https://www.youtube.com/embed/DyDfgMOUjCI?si=_E5HZbjjLD-f7vTk"},
+    {playlist: playlist_pop, title: "As It Was", artist: "Harry Styles",                        youtube_url: "https://www.youtube.com/embed/H5v3kku4y6Q?si=FxoNVva29oXiy47r"},
+    {playlist: playlist_pop, title: "Don’t Start Now", artist: "Dua Lipa",                      youtube_url: "https://www.youtube.com/embed/oygrmJFKYZY?si=KPrqY0qG-n3JqMgo"},
+    {playlist: playlist_pop, title: "Shake It Off", artist: "Taylor Swift",                     youtube_url: "https://www.youtube.com/embed/Z4A9ZZo_rAE?si=zpiUFff_xJ3684--"},
+    {playlist: playlist_pop, title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars",        youtube_url: "https://www.youtube.com/embed/OPf0YbXqDm0?si=e7rOR7ufzNsQqo9f"},
+    {playlist: playlist_pop, title: "Havana", artist: "Camila Cabello",                         youtube_url: "https://www.youtube.com/embed/BQ0mxQXmLsk?si=5PnkuDss1ZPx-aYe"},
+    {playlist: playlist_pop, title: "Billie Jean", artist: "Michael Jackson",                   youtube_url: "https://www.youtube.com/embed/Zi_XLOBDo_Y?si=Qlhe0Efe9b-cBd7_"},
+    {playlist: playlist_pop, title: "Royals", artist: "Lorde",                                  youtube_url: "https://www.youtube.com/embed/LFasFq4GJYM?si=UTjzs1kLNQne8ENu"}
   ]
 )
 
