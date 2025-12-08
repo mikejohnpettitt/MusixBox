@@ -5,5 +5,4 @@ class UserSession < ApplicationRecord
 
 
 
-
 end
