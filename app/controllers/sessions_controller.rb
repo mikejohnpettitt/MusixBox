@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       if params[:mode] == "quickplay"
         redirect_to play_session_path(@user_session)
       else
-        redirect_to group_path(@user_session)
+        redirect_to group_path(@user_session.group_id)
       end
 
     else
