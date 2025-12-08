@@ -1,3 +1,7 @@
-<div id="player_<%= user.id %>" class="player">
-  <%= user.id %>
+<div id="player_<%= user.id %>" class="player d-flex flex-row align-items-center">
+  <%= image_tag "person.svg", class: "p-2 rounded-circle", style:"width:60px" %>
+  <div  class="fw-bold" ><%= "User#{user.id}" %></div>
+
 </div>
+
+Interpoler une couleur random pour les logos
