@@ -71,14 +71,33 @@ class LobbyChannel < ApplicationCable::Channel
   end
 
   def next_question(data)
-  Rails.logger.info "=== NEXT QUESTION: #{data} ==="
   ActionCable.server.broadcast(
     "lobby_#{@group.id}",
     {
       type: 'next_question',
-      url: data['url']
+      question_id: data['question_id']
     }
   )
-end
+  end
+
+  def pause_video(data)
+  ActionCable.server.broadcast(
+    "lobby_#{@group.id}",
+    {
+      type: 'video_paused',
+      user_id: data['user_id']
+    }
+  )
+  end
+
+  def play_video(data)
+  ActionCable.server.broadcast(
+    "lobby_#{@group.id}",
+    {
+      type: 'video_playing',
+      user_id: data['user_id']
+    }
+  )
+  end
 
 end

@@ -7,6 +7,7 @@ export default class extends Controller {
     groupId: Number,
     userId: Number,
     startUrl: String,
+    sessionPath: String
   }
 
   connect() {
@@ -15,6 +16,7 @@ export default class extends Controller {
       {
         channel: "LobbyChannel",
         group_id: this.groupIdValue,
+        user_session_id: this.userSessionIdValue,
         user_id: this.userIdValue      },
       {
         received: this.received.bind(this)
@@ -48,6 +50,22 @@ export default class extends Controller {
 
     if (data.type === "user_joined") {
       document.getElementById('players').insertAdjacentHTML('beforeend', data.html)
+    }
+
+    if (data.type === 'video_paused') {
+      const youtubeEl = document.querySelector('[data-controller~="youtube"]')
+      if (youtubeEl) {
+        const youtubeController = this.application.getControllerForElementAndIdentifier(youtubeEl, 'youtube')
+        if (youtubeController) youtubeController.pause()
+      }
+    }
+
+    if (data.type === 'video_playing') {
+      const youtubeEl = document.querySelector('[data-controller~="youtube"]')
+      if (youtubeEl) {
+        const youtubeController = this.application.getControllerForElementAndIdentifier(youtubeEl, 'youtube')
+        if (youtubeController) youtubeController.play()
+      }
     }
 
     if (data.type === "user_left") {
@@ -102,7 +120,7 @@ export default class extends Controller {
     }
 
     if (data.type === 'next_question') {
-      window.location = data.url
+      window.location = `${this.sessionPathValue}?current_question=${data.question_id}`
     }
   }
 
@@ -127,8 +145,19 @@ export default class extends Controller {
 
   goToNext(event) {
     event.preventDefault()
-    const url = event.currentTarget.href
-    this.channel.perform('next_question', { url: url })
+    console.log("href:", event.currentTarget.href)
+    const url = new URL(event.currentTarget.href)
+    const questionId = url.searchParams.get('current_question')
+    console.log("questionId:", questionId)
+    this.channel.perform('next_question', { question_id: questionId })
+  }
+
+  pauseVideo() {
+    this.channel.perform('pause_video', { user_id: this.userIdValue })
+  }
+
+  playVideo() {
+    this.channel.perform('play_video', { user_id: this.userIdValue })
   }
 
 }
