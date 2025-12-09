@@ -1,10 +1,23 @@
 class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
-    if UserSession.find(params[:id]).nil?
-     @user_session = UserSession.create(user: current_or_guest_user, group: @group, session: UserSession.where(group: @group).first.session)
-    else
-     @user_session = UserSession.find(params[:id])
+    # if UserSession.find(params[:id]).nil?
+    # if UserSession.where(group_id: params[:id]).where(user: current_or_guest_user).count == 0
+    #  @user_session = UserSession.create(user: current_or_guest_user, group: @group, session: UserSession.where(group: @group).first.session)
+    # else
+    #  @user_session = UserSession.find(params[:id])
+    # end
+
+    # Find existing user session for this user and group
+    @user_session = UserSession.find_by(group: @group, user: current_or_guest_user)
+
+    # Create one if it doesn't exist
+    if @user_session.nil?
+      @user_session = UserSession.create(
+        user: current_or_guest_user,
+        group: @group,
+        session: UserSession.where(group: @group).first.session
+      )
     end
 
     # Load connected users for the lobby
@@ -22,7 +35,6 @@ class GroupsController < ApplicationController
 
   def start
     @group = Group.find(params[:id])
-
     # Optional: mark group as started here if you want
     # group.update(started_at: Time.current)
 

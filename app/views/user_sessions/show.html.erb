@@ -2,7 +2,9 @@
 data-controller="lobby"
 data-lobby-user-id-value="<%= current_or_guest_user.id %>"
 data-lobby-group-id-value="<%= @user_session.group.id %>"
-data-lobby-start-url-value="<%= play_session_path(@user_session) %>">
+data-lobby-start-url-value="<%= play_session_path(@user_session) %>"
+data-lobby-session-path-value="<%= play_session_path(@user_session) %>">
+>
   <div class="doudou" data-controller="youtube toggle">
     <div class="container-30">
       <% questions = Question.where(session_id: @user_session.session_id).order(:id) %>
@@ -34,7 +36,7 @@ data-lobby-start-url-value="<%= play_session_path(@user_session) %>">
 
     <div class="container-45">
       <div class="d-flex justify-content-center align-items-center flex-grow-1">
-        <%= link_to "#" , data: { action: "click->youtube#pause click->toggle#buzz click->lobby#buzzerPressed" } do %>
+        <%= link_to "#" , data: { action: "click->toggle#buzz click->lobby#buzzerPressed click->lobby#pauseVideo" } do %>
           <div class="buzzer d-flex justify-content-center align-items-center bg-orange-theme" data-toggle-target="buzzer">
             <div>
               <%= image_tag "Logo sans nom 2.png" , style: "width: 140px;" %>

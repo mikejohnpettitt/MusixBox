@@ -40,15 +40,23 @@ export default class extends Controller {
         this.formTarget.classList.add("d-none")
         this.buzzerTarget.classList.remove("d-none")
 
-        // Play video
-        const youtubeEl = this.element
-        const youtubeController = this.application.getControllerForElementAndIdentifier(youtubeEl, 'youtube')
-        if (youtubeController) {
-          youtubeController.play()
+    //     // Play video
+    //     const youtubeEl = this.element
+    //     const youtubeController = this.application.getControllerForElementAndIdentifier(youtubeEl, 'youtube')
+    //     if (youtubeController) {
+    //       youtubeController.play()
+    //     }
+
+    //     if (lobbyController) lobbyController.answerWrong()
+
+    //   }
+    // }, 100)
+
+        // Broadcast play video to everyone
+        if (lobbyController) {
+          lobbyController.answerWrong()
+          lobbyController.playVideo()
         }
-
-        if (lobbyController) lobbyController.answerWrong()
-
       }
     }, 100)
   }
