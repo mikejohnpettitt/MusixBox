@@ -4,13 +4,70 @@
   <div class="shape-2"></div>
   <div class="shape-3"></div>
 
-  <%= UserSession.where(group: @group).count == 1 ? @mode = "solo" : @mode = "match" %>
 
-  <div>This game was a <%= @mode %> game</div>
+  <% UserSession.where(group: @group).count == 1 ? @mode = "solo" : @mode = "match" %>
+  <!-- Below is to show match results -->
+  <% if @mode == "match" %>
+
+<div class="container-40 d-flex flex-column mt-5">
+
+  <!-- Title -->
+  <div class="text-center position-relative" style="z-index: 1;">
+    <h2 class="page-title">The podium</h2>
+  </div>
+<!-- Podium -->
+    <% UserSession.where(group: @group).sort_by(&:score).reverse.to_a.first(3).each_with_index do |user_session, index| %>
+
+      <div class="podium-<%=index+1%>" >
+        <div class="podium-user">#<%= index + 1 %> User-<%=  user_session.user.id %></div>
+        <div class="podium-points"><%=  user_session.score %> points</div>
+      </div>
+    <% end %>
+</div>
+
+<div class="container-40 d-flex flex-column">
+
+  <h2 class="text-center ">Your stats</h2>
+
+  <div class="d-flex justify-content-center" style="z-index: 1;">
+    <div class="score-card-mini flex-grow-2 m-1">
+      <div class="score-percentage"><%= @percentage %>%</div>
+      <div class="score-text"><%= @score %> / <%= @max_score %></div>
+    </div>
+  
+  <!-- Fastest Guess -->
+  <% if @fastest_title %>
+    <div class="fastest-card m-1 position-relative flex-grow-1 text-center" style="z-index: 1;">
+      <div class="fastest-label">🎯 Fastest guess</div>
+      <div class="fastest-time"><%= (@fastest_title.time_taken / 1000.0).round(2) %> sec</div>
+      <% if @fastest_title.song %>
+        <div class="fastest-song"><%= @fastest_title.song.title %></div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+
+  <!-- Trophy Card (if > 80%) -->
+  <% if @percentage > 80 %>
+    <div class="trophy-card m-1 position-relative" style="z-index: 1;">
+      <h3 class="trophy-title">🏆 Ace of <%= @playlist.title %> 🏆</h3>
+      <% if @percentage == 100 %>
+        <p class="trophy-perfect">Perfect score!</p>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+  <% end %>
+
+
+  <!-- Below is to show solo results -->
+  <% if @mode == "solo" %>
 
   <!-- Title -->
   <header class="text-center mb-4 position-relative" style="z-index: 1;">
-    <h1 class="page-title mb-0">Your Results</h1>
+    <h1 class="page-title mt-5">Your Results</h1>
   </header>
 
   <!-- Score Card -->
@@ -33,7 +90,7 @@
 
   <!-- Fastest Guess -->
   <% if @fastest_title %>
-    <div class="fastest-card mb-4 position-relative" style="z-index: 1;">
+    <div class="fastest-card mb-4 position-relative text-center" style="z-index: 1;">
       <div class="fastest-label">🎯 Fastest guess</div>
       <div class="fastest-time"><%= (@fastest_title.time_taken / 1000.0).round(2) %> sec</div>
       <% if @fastest_title.song %>
@@ -41,6 +98,10 @@
       <% end %>
     </div>
   <% end %>
+
+
+<% end %>
+<div class="container-15">
 
   <!-- Buttons -->
   <div class="mt-auto position-relative" style="z-index: 1;">
@@ -53,5 +114,6 @@
       <% end %>
     </div>
   </div>
+</div>
 
 </div>

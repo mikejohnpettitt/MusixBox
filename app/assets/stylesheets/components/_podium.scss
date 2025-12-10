@@ -1,0 +1,42 @@
+.podium-1, .podium-2, .podium-3 {
+    margin: 0.3em;
+    color: white;
+    font-weight: bold;
+}
+
+.podium-1 {
+    @extend %card-brutal-base;
+    background: $purple;
+    padding: 0.5rem 3rem;
+    text-align: center;
+}
+
+.podium-2 {
+    @extend %card-brutal-base;
+    background: $orange;
+    padding: 0.5rem 2rem;
+    text-align: center;
+}
+
+.podium-3 {
+    @extend %card-brutal-base;
+    background: $green;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.podium-1 > .podium-user {
+    font-size: 1.5em;
+}
+
+.podium-2 > .podium-user {
+    font-size: 1em;
+}
+
+.podium-3 > .podium-user {
+    font-size: 1em;
+}
+
+.podium-points {
+    font-size: 0.5em !important;
+}

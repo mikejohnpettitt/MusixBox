@@ -43,6 +43,13 @@ input[type="radio"]:checked + .playlist-card {
   text-align: center;
 }
 
+.score-card-mini {
+  @extend %card-brutal-base;
+  background: $orange;
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+}
+
 .score-percentage {
   font-size: 2.5rem;
   font-weight: 700;
@@ -68,7 +75,7 @@ input[type="radio"]:checked + .playlist-card {
 .trophy-card {
   @extend %card-brutal-base;
   background: $yellow;
-  box-shadow: $shadow-md;
+  // box-shadow: $shadow-md;
   padding: 1rem;
   text-align: center;
 }
@@ -94,8 +101,9 @@ input[type="radio"]:checked + .playlist-card {
 .fastest-card {
   @extend %card-brutal-base;
   background: $white;
-  box-shadow: $shadow-md;
+  // box-shadow: $shadow-md;
   padding: 1rem;
+  // max-width: 50dvw;
 }
 
 .fastest-label {
