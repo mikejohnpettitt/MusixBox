@@ -1,5 +1,5 @@
 <form action="<%= sessions_path %>" method="post" data-controller="session">
-  <div class="bg-session vh-100 position-relative overflow-hidden d-flex flex-column px-3 py-4">
+  <div class="bg-session vh-100 position-relative overflow-hidden d-flex flex-column px-3 pt-5 pb-4">
     
     <div class="shape-1"></div>
     <div class="shape-2"></div>
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="flex-grow-1 overflow-hidden position-relative z-1 mb-3">
+    <div class="flex-grow-1 overflow-y-auto overflow-x-hidden  position-relative z-1 mb-3">
       <div class="row g-2">
         <% @playlists.each do |playlist| %>
           <div class="col-6 col-md-4">
@@ -36,8 +36,9 @@
       </div>
     </div>
 
-        <div class="d-flex justify-content-center flex-shrink-0 position-relative z-1">
-          <button type="submit" class="btn-submit w-100 py-3 rounded-3 text-uppercase fw-bold">Start!</button>
-        </div>
-      </div>
-    </form>
+    <div class="d-flex justify-content-center flex-shrink-0 position-relative z-1">
+      <button type="submit" class="btn-submit w-100 py-3 rounded-3 text-uppercase fw-bold">Start!</button>
+    </div>
+
+  </div>
+</form>
