@@ -4,17 +4,23 @@ data-controller="lobby"
 data-lobby-group-id-value="<%= @group.id %>"
 data-lobby-user-id-value="<%= current_or_guest_user.id %>"
 data-lobby-start-url-value="<%= play_session_path(@user_session) %>"
-class="overflow-hidden container-navbar dvh-100" style="height: calc(100vh - 60px)"
+class="overflow-hidden container-navbar dvh-100"
 >
   <div class="container d-flex flex-column justify-content-between align-items-center h-100">
     <div class="text-center">
       <h1>Lobby <%= @group.id %></h1>
       <%= raw(@qr_svg.html_safe) %>
       <p class="fw-bold"><%= @content %></p>
-      <div id="players" class="row row-cols-4 g-2 justify-content-center">
+      <div id="players" class="row row-cols-4 g-2 justify-content-center mb-2">
         <% @connected_users.each do |user| %>
           <%= render 'players', user: user %>
         <% end %>
+      </div>
+      <% colors = %w[#FF6B6B #4ECDC4 #45B7D1 #96CEB4 #FFEAA7 #DDA0DD #98D8C8] %>
+      <% user_color = colors[current_or_guest_user.id % colors.length] %>
+      <div>
+        <i class="fa-solid fa-compact-disc fa-6x" style="color: <%= user_color %>; -webkit-text-stroke: 3px black;"></i>
+        <h2  class="fw-bold" ><%= "You are User#{current_or_guest_user.id}" %><h2>
       </div>
     </div>
     <div>
