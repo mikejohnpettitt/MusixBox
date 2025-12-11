@@ -28,13 +28,15 @@
       </div>
     <% end %>
 
-    <% UserSession.where(group: @user_session.group).sort_by(&:score).reverse.to_a.each_with_index do |user_session, index| %>
-    <% if user_session.user == current_or_guest_user %>
-    <div class="podium-3 p-3 m-1">
-    <div class="">My position:</div>
-    <div class="podium-user">#<%= index+1 %></div>
-    </div>
-    <% end %>
+    <% if UserSession.where(group: @user_session.group).count >1 %>
+      <% UserSession.where(group: @user_session.group).sort_by(&:score).reverse.to_a.each_with_index do |user_session, index| %>
+        <% if user_session.user == current_or_guest_user %>
+          <div class="podium-3 p-3 m-1">
+            <div class="">My position:</div>
+            <div class="podium-user">#<%= index+1 %></div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
 </div>
     <div class="card-footer">
