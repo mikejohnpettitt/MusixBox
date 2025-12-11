@@ -83,4 +83,3 @@ gem "devise-guests"
 
 # this was added to compare user input with user answer
 gem 'fuzzy-string-match', '~> 1.0', '>= 1.0.1'
-gem 'httparty' 
