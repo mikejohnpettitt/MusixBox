@@ -8,14 +8,18 @@ export default class extends Controller {
   connect() {
     console.log("youtube connecté")
     this.loadYouTubeAPI()
+    // setTimeout(() => {
+    //   this.ytPlayer.playVideo()
+
+    // }, "2000");
   }
 
   loadYouTubeAPI() {
     // Charge la vidéo
-    if (window.YT) {
-      this.initPlayer()
-      return
-    }
+    // if (window.YT) {
+    //   this.initPlayer()
+    //   return
+    // }
 
     // Charge l'api de l'iframe
     const tag = document.createElement('script')
@@ -38,7 +42,14 @@ export default class extends Controller {
     }
 
     // Crée l'instance de YT.Player à aprtir de l'iframe
-    this.ytPlayer = new YT.Player(iframe.id)
+    this.ytPlayer = new YT.Player(iframe.id, {
+      events: {
+        onReady: () => {
+          this.ytPlayer.playVideo()
+          console.log("Player prêt!")
+        }
+      }
+    })
   }
 
   pause() {
