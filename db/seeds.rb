@@ -99,15 +99,15 @@ Song.create!(
 
 Song.create!(
   [
-    {playlist: playlist_rock, title: "Hardest Button to Button", artist: "The White Stripes",         youtube_url: "https://www.youtube.com/embed/K4dx42YzQCE?si=LbXTI9nJnt6mAj70"},
+    {playlist: playlist_rock, title: "Immigrant Song", artist: "Led Zeppelin",                        youtube_url: "https://www.youtube.com/embed/P3Y8OWkiUts?si=Wi2cL8TBd6xPnSSN"},
     {playlist: playlist_rock, title: "Seven Nation Army", artist: "The White Stripes",                youtube_url: "https://www.youtube.com/embed/0J2QdDbelmY?si=cFS5SG5JtqbZse3O"},
-    {playlist: playlist_rock, title: "Everlong", artist: "Foo Fighters",                              youtube_url: "https://www.youtube.com/embed/eBG7P-K-r1Y?si=EwaR69_uN0hbRMIc"},
+    {playlist: playlist_rock, title: "Sweet Home Alabama", artist: "Lynyrd Skynyrd",                              youtube_url: "https://www.youtube.com/embed/ye5BuYf8q4o?si=5AxBf-CHPXZpqt72"},
     {playlist: playlist_rock, title: "Californication", artist: "Red Hot Chili Peppers",              youtube_url: "https://www.youtube.com/embed/YlUKcNNmywk?si=JK-0O6fDy9Y7fkLX"},
     {playlist: playlist_rock, title: "No One Knows", artist: "Queens of the Stone Age",               youtube_url: "https://www.youtube.com/embed/s88r_q7oufE?si=40uEGndksGyop5IA"},
-    {playlist: playlist_rock, title: "Reptilia", artist: "The Strokes",                               youtube_url: "https://www.youtube.com/embed/b8-tXG8KrWs?si=u4AVedkExLi7farf"},
+    {playlist: playlist_rock, title: "Thunderstruck", artist: "AC/DC",                               youtube_url: "https://www.youtube.com/embed/mBksMIl9Kf0?si=viJs2rPJMBf-bCTx"},
     {playlist: playlist_rock, title: "Last Nite", artist: "The Strokes",                              youtube_url: "https://www.youtube.com/embed/TOypSnKFHrE?si=WmLByIoDWgipsm1g"},
     {playlist: playlist_rock, title: "Mr. Brightside", artist: "The Killers",                         youtube_url: "https://www.youtube.com/embed/gGdGFtwCNBE?si=Ad71l9gzdbPEto68"},
-    {playlist: playlist_rock, title: "Welcome to the Jungle", artist: "Guns N' Roses",                youtube_url: "https://www.youtube.com/embed/o1tj2zJ2Wvg?si=-WrrgNynHFswUD2T"},
+    {playlist: playlist_rock, title: "Sweet Child Of Mine", artist: "Guns N' Roses",                youtube_url: "https://www.youtube.com/embed/1w7OgIMMRc4?si=bFApZl-Jz0w6DNGy"},
     {playlist: playlist_rock, title: "Smells Like Teen Spirit", artist: "Nirvana",                    youtube_url: "https://www.youtube.com/embed/hTWKbfoikeg?si=QYFN1ugCopuwOHOB"}
   ]
 )
